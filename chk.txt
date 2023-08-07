@@ -1,0 +1,45 @@
+task 1:{
+Algorithm CountWordsAndVowels
+    Input: sentence (string)
+    Output: wordCount (integer), vowelCount (integer)
+
+    wordCount := 0
+    vowelCount := 0
+
+    FOR each character c in sentence
+        IF c = ' '
+            wordCount := wordCount + 1
+        ELSE IF c is a vowel (a, e, i, o, u, A, E, I, O, U)
+            vowelCount := vowelCount + 1
+        END IF
+    END FOR
+
+    wordCount := wordCount + 1  // Adding 1 for the last word after the point
+    Output wordCount, vowelCount
+End Algorithm
+}
+task 2:{
+    Algorithm SumOfDistinctElements
+    Input: set1 (array of integers), set2 (array of integers)
+    Output: sum (integer)
+
+    sumArray := InitializeArrayWithZeros(max(max(set1), max(set2)) + 1)  // Initialize an array to keep track of presence
+
+    FOR each element x in set1
+        sumArray[x] := 1
+    END FOR
+
+    FOR each element y in set2
+        sumArray[y] := 1
+    END FOR
+
+    sum := 0
+    FOR i FROM 0 TO length(sumArray) - 1
+        IF sumArray[i] = 1
+            sum := sum + i
+        END IF
+    END FOR
+
+    Output sum
+End Algorithm
+}
